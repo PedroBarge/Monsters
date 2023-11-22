@@ -3,20 +3,18 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Battle {
-    static Scanner scanner = new Scanner(System.in);
     static Random random = new Random();
     //----------------------------------
-    static ArrayList<Monster> listOfMonsters1 = new ArrayList<>();
-    static ArrayList<Monster> listOfMonsters2 = new ArrayList<>();
 
     public void startBattle(String nameP1, String nameP2) {
         System.out.println("Battle");
-        while (!listOfMonsters1.isEmpty() && !listOfMonsters2.isEmpty()) {
+
+        while (!MonsterGame.listOfMonsters1.isEmpty() && !MonsterGame.listOfMonsters2.isEmpty()) {
             //Escolhe um número aleatorio tendo em conta o tamanho do array
-            int valueRandomFromArray1 = random.nextInt(listOfMonsters1.size());
-            int valueRandomFromArray2 = random.nextInt(listOfMonsters2.size());
-            Monster monsterFrom1 = listOfMonsters1.get(valueRandomFromArray1);
-            Monster monsterFrom2 = listOfMonsters2.get(valueRandomFromArray2);
+            int valueRandomFromArray1 = random.nextInt(MonsterGame.listOfMonsters1.size());
+            int valueRandomFromArray2 = random.nextInt(MonsterGame.listOfMonsters2.size());
+            Monster monsterFrom1 = MonsterGame.listOfMonsters1.get(valueRandomFromArray1);
+            Monster monsterFrom2 = MonsterGame.listOfMonsters2.get(valueRandomFromArray2);
 
             //Player 1 ataca player 2
             System.out.println();
@@ -28,7 +26,7 @@ public class Battle {
                 System.out.println(monsterFrom2.getName() + " HP: " + monsterFrom2.health);
             } else {
                 System.out.println(monsterFrom2.getName() + " is dead...");
-                listOfMonsters2.remove(valueRandomFromArray2);
+                MonsterGame.listOfMonsters2.remove(valueRandomFromArray2);
             }
 
             //Player 2 ataca player 1
@@ -41,10 +39,10 @@ public class Battle {
                 System.out.println(monsterFrom1.getName() + " HP: " + monsterFrom1.health);
             } else {
                 System.out.println(monsterFrom1.getName() + " is dead...");
-                listOfMonsters1.remove(valueRandomFromArray1);
+                MonsterGame.listOfMonsters1.remove(valueRandomFromArray1);
             }
         }
-        if (listOfMonsters1.isEmpty()) {
+        if (MonsterGame.listOfMonsters1.isEmpty()) {
             System.out.println(nameP2 + " WINS");
         } else System.out.println(nameP1 + " WINS");
     }
