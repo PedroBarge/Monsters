@@ -42,6 +42,7 @@ public class Battle {
                 MonsterGame.listOfMonsters1.remove(valueRandomFromArray1);
             }
         }
+        System.out.println();
         if (MonsterGame.listOfMonsters1.isEmpty()) {
             System.out.println(nameP2 + " WINS");
         } else System.out.println(nameP1 + " WINS");
