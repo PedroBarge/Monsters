@@ -36,7 +36,7 @@ public class MonsterGame {
         //----------------------------------
         //Battle
         System.out.println("Battle");
-        while (!listOfMonsters1.isEmpty() && !listOfMonsters2.isEmpty()) {
+        /*while (!listOfMonsters1.isEmpty() && !listOfMonsters2.isEmpty()) {
             //Escolhe um número aleatorio tendo em conta o tamanho do array
             int valueRandomFromArray1 = random.nextInt(listOfMonsters1.size());
             int valueRandomFromArray2 = random.nextInt(listOfMonsters2.size());
@@ -73,6 +73,9 @@ public class MonsterGame {
         if (listOfMonsters1.isEmpty()) {
             System.out.println(nameP2 + " WINS");
         } else System.out.println(nameP1 + " WINS");
+        */
+        Battle battle = new Battle();
+        battle.startBattle(nameP1,nameP2);
     }
 
     public static void soutRules() {
