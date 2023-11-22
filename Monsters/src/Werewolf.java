@@ -6,7 +6,6 @@ public class Werewolf extends Monster {
 
     @Override
     int attack() {
-        super.damage = 10;
         return damage;
     }
 

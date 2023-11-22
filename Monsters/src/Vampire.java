@@ -15,7 +15,6 @@ public class Vampire extends Monster {
             super.health += biteHeal;
             System.out.println("Vampire bites and heals!");
         }
-        super.damage = 10;
         return super.damage;
     }
 
