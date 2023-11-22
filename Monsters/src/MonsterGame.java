@@ -30,7 +30,6 @@ public class MonsterGame {
         String nameP2 = scanner.next();
         //----------------------------------
         maxNumMonstersFromUsers(nameP1, nameP2);
-        System.out.println(numMaxMonsters);
         //----------------------------------
         //Adicionar mosntros ao array de cada player
         setMonstersToPlayers(nameP1, nameP2);
